@@ -2,8 +2,10 @@ import { createContext, useContext} from "react"
 export const CartItem  = createContext(
     {
         items:[],
+        total:0,
         addItem:()=>{},
-        remItem:()=>{}
+        remItem:()=>{},
+        calcTotal:()=>{}
     }
 )
 const CartItemProvider = CartItem.Provider;

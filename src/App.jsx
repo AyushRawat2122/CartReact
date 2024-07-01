@@ -6,8 +6,8 @@ import { Outlet } from "react-router-dom";
 
 function App() {
   const [items, setItems] = useState([]);
-
-
+  const [total, setTotal] = useState(0);
+  
   function addItem(newItem) {
     const existingItem = items.find((item) => item.id === newItem.id);
     if (!existingItem) {
@@ -21,9 +21,12 @@ function App() {
     setItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
   }
 
-
+  function calcTotal(items){
+    const newTotal = items.reduce((acc, item) => acc + (parseFloat(item.unit) * parseFloat(item.price)), 0);
+    setTotal(newTotal);
+  }
   return (
-    <CartItemProvider value={{ items, addItem, remItem }}>
+    <CartItemProvider value={{ items, total , addItem, remItem, calcTotal}}>
       <NavBar></NavBar>
       <Outlet/>
     </CartItemProvider>

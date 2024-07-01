@@ -7,7 +7,7 @@ function Products() {
   return (
     <div className="grid grid-cols-4 p-10 gap-4">
     {products.map((product) => {
-      return <ProductCard data={product} />;
+      return <ProductCard key = {product.id} data={product} />;
     })}
   </div>
   )

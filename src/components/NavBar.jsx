@@ -1,11 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { FaShoppingCart } from "react-icons/fa";
 import { useCart } from '../contexts/CartItem';
 import { NavLink , Link } from 'react-router-dom';
 function NavBar() {
 
   const {items} = useCart();
-  useEffect(()=>{console.log(items);} , [items])
   return (
     <nav className='bg-black text-white p-2 flex justify-between'> 
     
