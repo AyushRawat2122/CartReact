@@ -5,6 +5,9 @@ import './index.css'
 import { RouterProvider , createBrowserRouter } from 'react-router-dom'
 import Products from './components/products/Products.jsx'
 import Cart from './components/cart/Cart.jsx'
+import fetchProducts from './hooks/fetchProducts.js'
+
+
 const router = createBrowserRouter(
   [
     {
@@ -12,6 +15,7 @@ const router = createBrowserRouter(
       element:<App/>,
       children : [
      {  
+      loader: fetchProducts,
       path : "/",
       element :<Products/>
      },

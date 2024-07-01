@@ -12,7 +12,8 @@ function ProductCard(prop) {
       <img src= {prop.data.image} alt= "" className="w-full h-64 object-contain" />
       <div className="p-4">
         <div className=" h-28 overflow-hidden" >
-        <h3 className="text-lg font-medium text-gray-900">{prop.data.title}</h3>
+        <h3 className="text-lg font-medium text-gray-900">{prop.data.title.slice(0 , 25)}</h3>
+        <p className="text-base font-normal text-gray-600">{prop.data.description.slice(0,70)} ... <button className="font-semibold underline">show more</button></p>
         </div>
         <p className="text-2xl font-bold text-red-500 mt-2">$ {prop.data.price}</p>
       </div>

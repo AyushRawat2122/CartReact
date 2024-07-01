@@ -1,9 +1,9 @@
 import React from 'react'
 import ProductCard from '../ProductCard';
-import useProductData from "/src/hooks/useProductData";
+import { useLoaderData } from 'react-router-dom';
 
 function Products() {
-    const products = useProductData();
+    const products = useLoaderData();
   return (
     <div className="grid grid-cols-4 p-10 gap-4">
     {products.map((product) => {
